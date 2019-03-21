@@ -223,7 +223,7 @@ endforeach()
 
 # Utilities: read_gitconddb
 
-add_executable(read src/tests/test_common.h src/utilities/read_gitconddb.cpp)
+add_executable(read_gitconddb src/tests/test_common.h src/utilities/read_gitconddb.cpp)
 target_include_directories(read_gitconddb PRIVATE include src)
 target_link_libraries(read_gitconddb GitCondDB PkgConfig::git2 fmt::fmt GTest::GTest GTest::Main)
 if(TARGET googletest-distribution)
