@@ -1,0 +1,21 @@
+#ifndef GIT_CONDDB_VERSION_H
+#define GIT_CONDDB_VERSION_H
+/*****************************************************************************\
+* (c) Copyright 2018 CERN for the benefit of the LHCb Collaboration           *
+*                                                                             *
+* This software is distributed under the terms of the Apache version 2        *
+* licence, copied verbatim in the file "COPYING".                             *
+*                                                                             *
+* In applying this licence, CERN does not waive the privileges and immunities *
+* granted to it by virtue of its status as an Intergovernmental Organization  *
+* or submit itself to any jurisdiction.                                       *
+\*****************************************************************************/
+
+#define GitCondDB_VERSION "@GitCondDB_VERSION@"
+#define GitCondDB_GIT_VERSION "@GitCondDB_GIT_VERSION@"
+
+#define GitCondDB_VERSION_MAJOR @GitCondDB_VERSION_MAJOR@
+#define GitCondDB_VERSION_MINOR @GitCondDB_VERSION_MINOR@
+#define GitCondDB_VERSION_PATCH @GitCondDB_VERSION_PATCH@
+
+#endif

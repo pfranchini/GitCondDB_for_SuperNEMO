@@ -1,0 +1,18 @@
+FROM ubuntu:rolling
+
+ARG FMT_VERSION=5.2.1
+
+RUN apt update && \
+    apt install -y build-essential git ninja-build curl cmake lcov pkg-config \
+                   libgit2-dev googletest unzip \
+                   clang-format-7 python3-pip \
+ && pip3 install yapf==0.24.0 gcovr \
+ && rm -rf /var/lib/apt/lists/* $HOME/.cache
+
+RUN curl -L -O https://github.com/fmtlib/fmt/releases/download/${FMT_VERSION}/fmt-${FMT_VERSION}.zip \
+ && unzip fmt-${FMT_VERSION}.zip \
+ && mkdir fmt-${FMT_VERSION}/build \
+ && cd fmt-${FMT_VERSION}/build \
+ && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=17 -DBUILD_SHARED_LIBS=YES -GNinja .. \
+ && cmake --build . --target install \
+ && cd ../.. && rm -rf fmt-${FMT_VERSION}.zip fmt-${FMT_VERSION}
