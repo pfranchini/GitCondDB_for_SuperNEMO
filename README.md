@@ -20,10 +20,10 @@ Libraries:
 - [JSON for Modern C++](https://nlohmann.github.io/json) for the JSON backend
 
 ## How to build:
-
+'''
 source /cvmfs/sft.cern.ch/lcg/views/LCG_95/x86_64-centos7-gcc8-dbg/setup.sh 
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib64/pkgconfig
 mkdir build && cd build
 cmake ..
 make
-
+'''

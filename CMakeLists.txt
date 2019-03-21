@@ -221,6 +221,18 @@ foreach(subsystem CondDB  FS  Git  Helpers  JSON)
   add_dependencies(test_${subsystem} TestData)
 endforeach()
 
+# Utilities: read_gitconddb
+
+add_executable(read src/tests/test_common.h src/utilities/read_gitconddb.cpp)
+target_include_directories(read_gitconddb PRIVATE include src)
+target_link_libraries(read_gitconddb GitCondDB PkgConfig::git2 fmt::fmt GTest::GTest GTest::Main)
+if(TARGET googletest-distribution)
+  add_dependencies(read_gitconddb googletest-distribution)
+endif()
+gtest_discover_tests(read_gitconddb)
+add_dependencies(read_gitconddb TestData)
+
+#################
 
 # - coverage reports
 if(CMAKE_BUILD_TYPE STREQUAL "Coverage")
