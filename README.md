@@ -27,3 +27,14 @@ mkdir build && cd build
 cmake ..
 make
 ```
+
+## Utilities:
+
+src/utilities/add_files_to_gitconddb.py
+build/read_gitconddb
+
+# Examples:
+```
+python src/utilities/add_files_to_gitconddb.py --debug --since $(date +%s000000000 -d 2019-03-02) ~/supernemo_test_cdb/ ~/supernemo_test_cdb.git/
+./build/read_gitconddb -r file:/home/user/supernemo_test_cdb.git -s detector2 -c condition2 -t $(date +%s000000000 -d 2019-03-02)
+```
