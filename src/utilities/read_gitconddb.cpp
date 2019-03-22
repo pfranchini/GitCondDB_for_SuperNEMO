@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
   GitCondDB::CondDB::Key key{"HEAD",strcat(strcat(source,"/"),condition),time};
   auto cond = db.get(key);
   
-  std::cout << "Data:\n" << std::get<0>( cond );
+  std::cout << "Data:\n" << std::get<0>( cond ) << std::endl;
   std::cout << "IOV: [" <<  std::get<1>( cond ).since << ", " << std::get<1>( cond ).until << ")\n\n";
   
   return 0;
