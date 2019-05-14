@@ -37,4 +37,5 @@ build/read_gitconddb
 ```
 python src/utilities/add_files_to_gitconddb.py --debug --since $(date +%s000000000 -d 2019-03-02) ~/supernemo_test_cdb/ ~/supernemo_test_cdb.git/
 ./build/read_gitconddb -r file:/home/user/supernemo_test_cdb.git -s detector2 -c condition2 -t $(date +%s000000000 -d 2019-03-02)
+./read_gitconddb -v v1.2.0 -r git:/home/user/supernemo_test_cdb.git -s detector2 -c condition1 -t $(date +%s000000000 -d 2019-06-02)
 ```
